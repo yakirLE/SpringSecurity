@@ -1,0 +1,15 @@
+# use Postgres
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/conference_spring_security
+    username: postgres
+    password: Password1!
+  jpa:
+    properties:
+      hibernate:
+        jdbc:
+          lob:
+            non_contextual_creation: true
+app:
+  webapp: conference
+  baseURL: http://localhost:8081/

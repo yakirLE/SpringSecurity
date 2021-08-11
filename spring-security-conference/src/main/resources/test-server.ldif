@@ -1,0 +1,51 @@
+dn: dc=pluralsight,dc=com
+objectclass: top
+objectclass: domain
+objectclass: extensibleObject
+dc: pluralsight
+
+dn: ou=groups,dc=pluralsight,dc=com
+objectclass: top
+objectclass: organizationalUnit
+ou: groups
+
+dn: ou=subgroups,ou=groups,dc=pluralsight,dc=com
+objectclass: top
+objectclass: organizationalUnit
+ou: subgroups
+
+dn: ou=people,dc=pluralsight,dc=com
+objectclass: top
+objectclass: organizationalUnit
+ou: people
+
+dn: uid=yakir,ou=people,dc=pluralsight,dc=com
+objectclass: top
+objectclass: person
+objectclass: organizationalPerson
+objectclass: inetOrgPerson
+cn: Yakir Levi
+sn: Levi
+uid: yakir
+userPassword: $2a$10$GVER/WZdPLIKYzb1QaR72.OYCCrDoFWq3yQOzVCJVEa0LvcjNOAPu
+
+dn: cn=developers,ou=groups,dc=pluralsight,dc=com
+objectclass: top
+objectclass: groupOfUniqueNames
+cn: developers
+ou: developer
+uniqueMember: uid=yakir,ou=people,dc=pluralsight,dc=com
+
+dn: cn=managers,ou=groups,dc=pluralsight,dc=com
+objectclass: top
+objectclass: groupOfUniqueNames
+cn: managers
+ou: manager
+uniqueMember: uid=yakir,ou=people,dc=pluralsight,dc=com
+
+dn: cn=submanagers,ou=subgroups,ou=groups,dc=pluralsight,dc=com
+objectclass: top
+objectclass: groupOfUniqueNames
+cn: submanagers
+ou: submanager
+uniqueMember: uid=yakir,ou=people,dc=pluralsight,dc=com
